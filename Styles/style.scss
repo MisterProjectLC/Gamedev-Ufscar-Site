@@ -1,0 +1,229 @@
+
+@mixin column-count($x){ 
+    -webkit-column-count: 2;
+    -moz-column-count: $x;
+    column-count: $x;
+  }
+  
+
+
+@font-face {
+    font-family: Square;
+    src: url('FORCED SQUARE.ttf');
+}
+
+html {
+    background-color:#151515;
+}
+
+/*general elements --------------------------- */
+
+h1, h2, p, button {
+    color: white;
+    font-family: Square;
+}
+
+h1, button {
+    font-size: 4vw;
+}
+
+h2 {
+    font-size: 1.5vw;
+}
+
+p {
+    font-size: 2vw;
+}
+
+a img {
+    opacity: inherit;
+}
+
+/* header  ------------------------- */
+
+@keyframes roll {
+	0% {
+	    margin-left: 10%;
+        transform: rotate(0deg);
+	}
+	50% {
+	    margin-left: calc(10% + 200px);
+        transform: rotate(360deg);
+	}
+    100% {
+	    margin-left: 10%;
+        transform: rotate(0deg);
+	}
+}
+
+@keyframes stay {
+	0% {
+	    margin-left: 0%;
+	}
+	50% {
+	    margin-left: -200px;
+	}
+    100% {
+	    margin-left: 0%;
+	}
+}
+
+
+#header {
+    /*display: inline-block;*/
+    position: fixed;
+    top: 0vw;
+    left: 0vw;
+    vertical-align: top;
+    margin: 0px;
+    padding: 0px;
+    padding-top: .0vw;
+    background-color:#81A689;
+    height: 75px;
+    width: 100%;
+    z-index: 99;
+
+    #logo {
+        margin-left: 10%;
+        height: 100%;
+    }
+
+    #logo.animated {
+        animation: roll 1s backwards;
+    }
+
+    #logoname {
+        margin-left: 0%;
+        height: 100%;
+    }
+
+    #logoname.animated {
+        animation: stay 1s backwards;
+    }
+
+    @media only screen {
+        #links {
+            height: 100%;
+            padding-right: 10%;
+            float: right;
+            white-space: nowrap;
+
+            a {
+                position: relative;
+                display: inline-block;
+                margin-top: 22px;
+                margin-left: 15px;
+
+                font-size: 1.3em;
+                font-weight: bold;
+                font-family:'Open Sans', sans;
+                text-transform: uppercase;
+                text-decoration: none;
+
+                color: #2A2A2A;
+                transition: color 0.3s;
+            }
+
+            a:hover {
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1000px) {
+        #links {
+            display: none;
+        }
+    }
+}
+
+/* project section -------------------- */
+
+main p {
+    text-align: center;
+}
+
+.project {
+	position: relative;
+	margin: 1vw auto auto auto;
+	width: 75%;
+	font-size: 1.5vw;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+
+    
+    div.project_overlay {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        bottom: 0%;
+      display: flex;
+      padding: .6vw .75vw;
+      opacity: 0;
+        background: rgba(0, 0, 0, 0.95);
+        transition: all .1s linear;
+        color: #151515;
+
+        * {
+            opacity: inherit;
+        }
+
+        p {
+            display: block;
+            position: absolute;
+              top: 4%;
+              right: 1%;
+            width: 50%;
+            height: 100%;
+            margin: 0px;
+            text-align: right;
+            pointer-events: none;
+            font-size: 120%;
+        }
+
+        a {
+            position: absolute;
+              right: 1%;
+              bottom: 5%;
+            align-items: flex-end;
+
+            img {
+                width: 6vw;
+                height: 6vw;
+            }
+        }
+
+        div.project_overlay_2 {
+            position: absolute;
+              right: 1%;
+              bottom: 5%;
+              margin: 0px;
+              padding: 0px;
+            clear: both;
+            display: table-column;
+            column-count: 2;
+
+            a {
+                position:static;
+                align-items: flex-end;
+
+                img {
+                    width: 6vw;
+                    height: 6vw;
+                    transform: transform(-50%, -50%);
+                    position:static;
+                    margin: 0px;
+                    padding: 0px;
+                }
+            }
+        }
+    }
+}
+
+.project:hover div.project_overlay, .project:active div.project_overlay {
+	opacity: 1;
+}
