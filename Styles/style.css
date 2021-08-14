@@ -1,57 +1,60 @@
 @font-face {
-  font-family: Square;
-  src: url("FORCED SQUARE.ttf");
+  font-family: "Aldo";
+  src: url("AldotheApache.ttf");
+}
+@font-face {
+  font-family: "Bahnschrift";
+  src: url("BAHNSCHRIFT.TTF");
 }
 html {
   background-color: #151515;
 }
 
 /*general elements --------------------------- */
-h1, h2, p, button {
-  color: white;
-  font-family: Square;
-}
-
-h1, button {
-  font-size: 4vw;
-}
-
-h2 {
-  font-size: 1.5vw;
-}
-
-p {
-  font-size: 2vw;
-}
-
 a img {
   opacity: inherit;
+}
+
+.whitespace {
+  height: 120px;
+}
+
+.sectionWhitespace {
+  height: 73px;
+}
+
+.smallWhitespace {
+  height: 60px;
+}
+
+.tinyWhitespace {
+  height: 20px;
 }
 
 /* header  ------------------------- */
 @keyframes roll {
   0% {
-    margin-left: 10%;
+    margin-left: 10vw;
     transform: rotate(0deg);
   }
   50% {
-    margin-left: calc(10% + 200px);
+    margin-left: calc(10vw + 190px);
     transform: rotate(360deg);
   }
   100% {
-    margin-left: 10%;
+    margin-left: 10vw;
     transform: rotate(0deg);
   }
 }
 @keyframes stay {
   0% {
-    margin-left: 0%;
+    margin-left: 0vw;
   }
   50% {
-    margin-left: -200px;
+    margin-left: calc(0vw - 190px);
   }
   100% {
-    margin-left: 0%;
+    margin-left: 0vw;
   }
 }
 #header {
@@ -64,23 +67,25 @@ a img {
   padding: 0px;
   padding-top: 0vw;
   background-color: #81A689;
-  height: 75px;
+  height: 10vh;
   width: 100%;
   z-index: 99;
 }
 #header #logo {
-  margin-left: 10%;
+  margin-left: 10vw;
+  margin-top: 0vw;
   height: 100%;
 }
 #header #logo.animated {
-  animation: roll 1s backwards;
+  animation: roll 0.75s backwards;
 }
 #header #logoname {
-  margin-left: 0%;
+  margin-left: 0vw;
+  margin-top: 0vw;
   height: 100%;
 }
 #header #logoname.animated {
-  animation: stay 1s backwards;
+  animation: stay 0.75s backwards;
 }
 @media only screen {
   #header #links {
@@ -92,9 +97,9 @@ a img {
   #header #links a {
     position: relative;
     display: inline-block;
-    margin-top: 22px;
-    margin-left: 15px;
-    font-size: 1.3em;
+    margin-top: 25px;
+    margin-left: 2vw;
+    font-size: 20px;
     font-weight: bold;
     font-family: "Open Sans", sans;
     text-transform: uppercase;
@@ -106,90 +111,136 @@ a img {
     color: #FFFFFF;
   }
 }
-@media only screen and (max-width: 1000px) {
-  #header #links {
-    display: none;
-  }
+
+/* carousel -------------------------------- */
+#carouselExampleIndicators {
+  top: 75px;
+}
+#carouselExampleIndicators .d-block {
+  height: 75vh;
+  object-fit: cover;
+}
+#carouselExampleIndicators .carousel-item:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+  z-index: 1;
 }
 
-/* project section -------------------- */
-main p {
+/* sectionTitle ----------------------------- */
+div.sectionTitle {
+  background-color: #151515;
+}
+div.sectionTitle h1 {
+  color: white;
+  text-transform: uppercase;
+  font-family: Aldo;
+  font-size: 3.5vw;
+  margin-top: auto;
+}
+div.sectionTitle .titleLeft {
+  margin-left: 10%;
+}
+div.sectionTitle .titleRight {
+  margin-left: 80%;
+}
+
+/* sections ----------------------------- */
+.section {
+  background-color: #EEEEEE;
+}
+.section h2, .section p, .section button {
+  color: #5f5f5f;
+  font-family: Bahnschrift;
+}
+.section h2 {
+  font-family: Bahnschrift;
+  font-size: 2vw;
+}
+.section p {
+  font-size: 1.25vw;
+}
+.section .center {
+  width: 75%;
+  margin: 0 auto;
   text-align: center;
 }
-
-.project {
-  position: relative;
-  margin: 1vw auto auto auto;
-  width: 75%;
-  font-size: 1.5vw;
+.section .flex-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 10%;
 }
-.project img {
-  display: block;
+.section .flex-container .text-left {
+  width: 40%;
+  min-width: 400px;
+  text-align: justify;
+}
+.section .flex-container .text-right {
+  width: 40%;
+  min-width: 400px;
+  text-align: right;
+}
+.section .flex-container .image {
+  width: 50%;
+  min-width: 500px;
+}
+.section .flex-container .image img {
   width: 100%;
 }
-.project div.project_overlay {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  right: 0%;
-  bottom: 0%;
-  display: flex;
-  padding: 0.6vw 0.75vw;
-  opacity: 0;
-  background: rgba(0, 0, 0, 0.95);
-  transition: all 0.1s linear;
-  color: #151515;
-}
-.project div.project_overlay * {
-  opacity: inherit;
-}
-.project div.project_overlay p {
-  display: block;
-  position: absolute;
-  top: 4%;
-  right: 1%;
-  width: 50%;
-  height: 100%;
-  margin: 0px;
-  text-align: right;
-  pointer-events: none;
-  font-size: 120%;
-}
-.project div.project_overlay a {
-  position: absolute;
-  right: 1%;
-  bottom: 5%;
-  align-items: flex-end;
-}
-.project div.project_overlay a img {
-  width: 6vw;
-  height: 6vw;
-}
-.project div.project_overlay div.project_overlay_2 {
-  position: absolute;
-  right: 1%;
-  bottom: 5%;
-  margin: 0px;
-  padding: 0px;
-  clear: both;
-  display: table-column;
-  column-count: 2;
-}
-.project div.project_overlay div.project_overlay_2 a {
-  position: static;
-  align-items: flex-end;
-}
-.project div.project_overlay div.project_overlay_2 a img {
-  width: 6vw;
-  height: 6vw;
-  transform: transform(-50%, -50%);
-  position: static;
-  margin: 0px;
-  padding: 0px;
-}
 
-.project:hover div.project_overlay, .project:active div.project_overlay {
-  opacity: 1;
+/* footer */
+#footer {
+  background-color: #151515;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+#footer #footer-container {
+  flex-wrap: wrap;
+  align-content: stretch;
+  margin: 0 auto;
+  height: 100%;
+  width: 75%;
+}
+#footer .footer-element {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  margin: 0 auto;
+  width: 40%;
+  height: 50px;
+}
+#footer #footer-icons {
+  align-items: center;
+  width: 65%;
+  margin: 0 auto;
+}
+#footer #footer-icons .image {
+  width: 50px;
+}
+#footer #footer-icons .image a {
+  width: 50px;
+  color: #FFFFFF;
+  transition: color 0.3s;
+}
+#footer #footer-icons .image a img {
+  width: 100%;
+}
+#footer #footer-icons a:hover {
+  color: #81A689;
+}
+#footer .flex-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 /*# sourceMappingURL=style.css.map */

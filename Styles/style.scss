@@ -8,8 +8,13 @@
 
 
 @font-face {
-    font-family: Square;
-    src: url('FORCED SQUARE.ttf');
+    font-family: 'Aldo';
+    src: url('AldotheApache.ttf');
+}
+
+@font-face {
+    font-family: 'Bahnschrift';
+    src: url('BAHNSCHRIFT.TTF');
 }
 
 html {
@@ -18,56 +23,54 @@ html {
 
 /*general elements --------------------------- */
 
-h1, h2, p, button {
-    color: white;
-    font-family: Square;
-}
-
-h1, button {
-    font-size: 4vw;
-}
-
-h2 {
-    font-size: 1.5vw;
-}
-
-p {
-    font-size: 2vw;
-}
-
 a img {
     opacity: inherit;
+}
+
+.whitespace {
+    height: 120px;
+}
+
+.sectionWhitespace {
+    height: 73px;
+}
+
+.smallWhitespace {
+    height: 60px;
+}
+
+.tinyWhitespace {
+    height: 20px;
 }
 
 /* header  ------------------------- */
 
 @keyframes roll {
 	0% {
-	    margin-left: 10%;
+	    margin-left: 10vw;
         transform: rotate(0deg);
 	}
 	50% {
-	    margin-left: calc(10% + 200px);
+	    margin-left: calc(10vw + 190px);
         transform: rotate(360deg);
 	}
     100% {
-	    margin-left: 10%;
+	    margin-left: 10vw;
         transform: rotate(0deg);
 	}
 }
 
 @keyframes stay {
 	0% {
-	    margin-left: 0%;
+	    margin-left: 0vw;
 	}
 	50% {
-	    margin-left: -200px;
+	    margin-left: calc(0vw - 190px);
 	}
     100% {
-	    margin-left: 0%;
+	    margin-left: 0vw;
 	}
 }
-
 
 #header {
     /*display: inline-block;*/
@@ -79,26 +82,29 @@ a img {
     padding: 0px;
     padding-top: .0vw;
     background-color:#81A689;
-    height: 75px;
+    height: 10vh;
+    //min-height: 60px;
     width: 100%;
     z-index: 99;
 
     #logo {
-        margin-left: 10%;
+        margin-left: 10vw;
+        margin-top: 0vw;
         height: 100%;
     }
 
     #logo.animated {
-        animation: roll 1s backwards;
+        animation: roll 0.75s backwards;
     }
 
     #logoname {
-        margin-left: 0%;
+        margin-left: 0vw;
+        margin-top: 0vw;
         height: 100%;
     }
 
     #logoname.animated {
-        animation: stay 1s backwards;
+        animation: stay 0.75s backwards;
     }
 
     @media only screen {
@@ -111,10 +117,10 @@ a img {
             a {
                 position: relative;
                 display: inline-block;
-                margin-top: 22px;
-                margin-left: 15px;
+                margin-top: 25px;
+                margin-left: 2vw;
 
-                font-size: 1.3em;
+                font-size: 20px;
                 font-weight: bold;
                 font-family:'Open Sans', sans;
                 text-transform: uppercase;
@@ -129,101 +135,158 @@ a img {
             }
         }
     }
+}
 
-    @media only screen and (max-width: 1000px) {
-        #links {
-            display: none;
-        }
+/* carousel -------------------------------- */
+#carouselExampleIndicators {
+    top: 75px;
+
+    .d-block {
+        height: 75vh;
+        object-fit: cover;
+    }
+
+    .carousel-item:before {
+        content: '';
+        position:absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.75) 100%);
+        z-index: 1;
     }
 }
 
-/* project section -------------------- */
+/* sectionTitle ----------------------------- */
+div.sectionTitle {
+    background-color:#151515;
 
-main p {
-    text-align: center;
-}
+    h1 {
+        color: white;
+        text-transform: uppercase;
+        font-family: Aldo;
+        font-size: 3.5vw;
 
-.project {
-	position: relative;
-	margin: 1vw auto auto auto;
-	width: 75%;
-	font-size: 1.5vw;
-
-    img {
-        display: block;
-        width: 100%;
+        margin-top: auto;
     }
 
+    .titleLeft {
+        margin-left: 10%;
+    }
+
+    .titleRight {
+        margin-left: 80%;
+    }
+}
+
+/* sections ----------------------------- */
+.section {
+    background-color:#EEEEEE;
+
+    h2, p, button {
+        color: #5f5f5f;
+        font-family: Bahnschrift/*Arial,Helvetica,sans-serif*/;
+    }
+
+    h2 {
+        font-family: Bahnschrift;
+        font-size: 2vw;
+    }
+
+    p {
+        font-size: 1.25vw;
+    }
+
+    .center {
+        width: 75%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 0 10%;
     
-    div.project_overlay {
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        right: 0%;
-        bottom: 0%;
-      display: flex;
-      padding: .6vw .75vw;
-      opacity: 0;
-        background: rgba(0, 0, 0, 0.95);
-        transition: all .1s linear;
-        color: #151515;
-
-        * {
-            opacity: inherit;
+        .text-left {
+            width: 40%;
+            min-width: 400px;
+            text-align: justify;
         }
-
-        p {
-            display: block;
-            position: absolute;
-              top: 4%;
-              right: 1%;
-            width: 50%;
-            height: 100%;
-            margin: 0px;
+    
+        .text-right {
+            width: 40%;
+            min-width: 400px;
             text-align: right;
-            pointer-events: none;
-            font-size: 120%;
         }
-
-        a {
-            position: absolute;
-              right: 1%;
-              bottom: 5%;
-            align-items: flex-end;
+    
+        .image {
+            width: 50%;
+            min-width: 500px;
 
             img {
-                width: 6vw;
-                height: 6vw;
+                width: 100%;
             }
         }
+    }
+}
 
-        div.project_overlay_2 {
-            position: absolute;
-              right: 1%;
-              bottom: 5%;
-              margin: 0px;
-              padding: 0px;
-            clear: both;
-            display: table-column;
-            column-count: 2;
+/* footer */
+#footer {
+    background-color:#151515;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+
+    #footer-container {
+        flex-wrap: wrap;
+        align-content: stretch;
+        margin: 0 auto;
+        height: 100%;
+        width: 75%;
+    }
+
+    .footer-element {
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+        margin: 0 auto;
+        width: 40%;
+        height: 50px;
+    }
+
+    #footer-icons {
+        align-items: center;
+        width: 65%;
+        margin: 0 auto;
+
+        .image {
+            width: 50px;
 
             a {
-                position:static;
-                align-items: flex-end;
+                width: 50px;
+                color: #FFFFFF;
+                transition: color 0.3s;
 
                 img {
-                    width: 6vw;
-                    height: 6vw;
-                    transform: transform(-50%, -50%);
-                    position:static;
-                    margin: 0px;
-                    padding: 0px;
+                    width: 100%;
                 }
             }
         }
-    }
-}
 
-.project:hover div.project_overlay, .project:active div.project_overlay {
-	opacity: 1;
+        a:hover {
+            color: #81A689;
+        }
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 }

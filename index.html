@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang = "en-US">
+<html lang = "en-US" style="scroll-behavior: smooth">
     <head>
         <meta charset="utf-8">
         <meta name="author" content="Dan Isamu">
@@ -7,23 +7,205 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/dbae45cec1.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <link href="Styles/style.css" rel="stylesheet" type="text/css">
-        <link rel="icon" href="Images/gamedev_logo.png">
+        <link href="Styles/mobile.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="Images/Icons/gamedev_logo.png">
         <title>Gamedev Ufscar</title>
     </head>
 
     <body>
         <div id="header">
-            <a href="#"><img id="logo" src="Images/gamedev_logo_ball.png" onmouseover="logoHover()"></img></a>
-            <a href="#"><img id="logoname" src="Images/gamedev_logo_name.png" onmouseover="logoHover()"></img></a>
+            <a href="#"><img id="logo" src="Images/Icons/gamedev_logo_ball.png" onmouseover="logoHover()"></img></a>
+            <a href="#"><img id="logoname" src="Images/Icons/gamedev_logo_name.png" onmouseover="logoHover()"></img></a>
             <div id="links">
-                <a href="#">SOBRE</a>
-                <a href="#">PROJETOS</a>
-                <a href="#">ATIVIDADES</a>
-                <a href="#">EVENTOS</a>
-                <a href="#">CONTATO</a>
+                <a href="#sobre">SOBRE</a>
+                <a href="#projetos">PROJETOS</a>
+                <a href="#atividades">ATIVIDADES</a>
+                <a href="#eventos">EVENTOS</a>
+                <a href="#footer">CONTATO</a>
             </div>
         </div>
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="Images/Carousel/ISS.png" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>ISS - Iporanga Space Station</h5>
+                        <p>Um platformer metroidvania-like absurdista em um Posto Ipiranga galático</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="Images/Carousel/Garibot.png" alt="Second slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Garibot e o Mundo de Resíduos</h5>
+                        <p>Jogo educativo sobre reciclagem de resíduos eletrônicos</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="Images/Carousel/ThaumOS.png" alt="Third slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>ThaumOS</h5>
+                        <p>Desmascare a conspiração por trás deste Sistema Operacional ala Windows 95</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <div id="sobre" class="sectionWhitespace"></div>
+        <div class="section">
+            <div class='sectionTitle'><h1 class="titleLeft">Sobre</h1></div>
+            <div class="smallWhitespace"></div>
+            <div class="flex-container">
+                <div class="text-left">
+                    <p>Nós somos um grupo de estudos sobre desenvolvimento de jogos, onde nosso principal objetivo é aprender sobre 
+                        técnicas e práticas que abrangem todas as áreas da produção de games.</p>
+                    <p>Visamos estudar sobre programação e softwares, e também sobre arte, roteiro e música para criar nossos próprios jogos.</p>
+                    <p>Desenvolvemos nossos projetos em equipes para exercitar o trabalho cooperativo, para que cada membro tenha liberdade para
+                        contribuir em qualquer aspecto do projeto.</p>
+                    <p>Além disso, também frequentemente participamos de maratonas de desenvolvimento de jogos (game jams) 
+                        e realizamos oficinas de estudos.</p>
+                </div>
+                <div class="image">
+                    <img src="Images/secot.png">
+                </div>
+            </div>
+
+            <div id="projetos" class="sectionWhitespace"></div>
+        </div>
+        
+        <div class="section">
+            <div class='sectionTitle'><h1 class="titleRight">Projetos</h1></div>
+            <div class="smallWhitespace"></div>
+            <p class="center">Na Gamedev Ufscar, a principal atividade de aprendizado são os projetos de jogos, onde membros da
+                entidade colocam seu conhecimento em prática. Projetos podem abranger uma variedade de gêneros, escopos, tecnologias e 
+                temáticas, e novos membros podem tanto entrar em grupos já estabelecidos quanto anunciar novos projetos que queiram
+                encabeçar.
+            </p>
+            <div class="tinyWhitespace"></div>
+            <div class="tinyWhitespace"></div>
+            <div class="flex-container">
+                <div class="image">
+                    <iframe frameborder="0" src="https://itch.io/embed/295693?bg_color=151515&amp;fg_color=eaeaea&amp;link_color=81A689&amp;border_color=81A689" width="552" height="167">
+                        <a href="https://gamedevufscar.itch.io/bisaorunner%22%3E">Bisão Runner by GameDev UFSCar, victorhwmn</a></iframe>
+
+                    <iframe frameborder="0" src="https://itch.io/embed/549831?bg_color=151515&amp;fg_color=eaeaea&amp;link_color=81A689&amp;border_color=81A689" width="552" height="167">
+                        <a href="https://andersongarrote.itch.io/garibot">Garibot e o Mundo de Resíduos by Anderson Garrote, Rutherfordio, 
+                            GameDev UFSCar, victorhwmn, Gi0vanini, MisterProject, andrebariani</a></iframe>
+
+                    <iframe frameborder="0" src="https://itch.io/embed/1015567?bg_color=151515&amp;fg_color=eaeaea&amp;link_color=81A689&amp;border_color=81A689" width="552" height="167">
+                        <a href="https://misterproject.itch.io/thaumos">ThaumOS by MisterProject, GameDev UFSCar, kyleflick124, 
+                            andrebariani, Gi0vanini</a></iframe>
+                </div>
+                <div class="image">
+                    <iframe frameborder="0" src="https://itch.io/embed/901688?bg_color=151515&amp;fg_color=eaeaea&amp;link_color=81A689&amp;border_color=81A689" width="552" height="167">
+                        <a href="https://misterproject.itch.io/iss-iporanga-space-station">ISS - Iporanga Space Station by MisterProject, 
+                            andrebariani, Anderson Garrote</a></iframe>
+                    
+                    <iframe frameborder="0" src="https://itch.io/embed/677522?bg_color=151515&amp;fg_color=eaeaea&amp;link_color=81A689&amp;border_color=81A689" width="552" height="167">
+                        <a href="https://misterproject.itch.io/abracajur">Abracajur by MisterProject, GameDev UFSCar, ARandomProgrammer, 
+                            Anderson Garrote, andrebariani</a></iframe>
+                    
+                    <iframe frameborder="0" src="https://itch.io/embed/748290?bg_color=151515&amp;fg_color=eaeaea&amp;link_color=81A689&amp;border_color=81A689" width="552" height="167">
+                        <a href="https://arandomprogrammer.itch.io/enter-the-rain">Enter The Rain by ARandomProgrammer, GameDev UFSCar</a></iframe>
+                </div>
+            </div>
+
+            <div class="tinyWhitespace"></div>
+            <a href="https://gamedevufscar.itch.io/">
+                <h2 style="color:#528755; text-decoration: underline; text-transform: uppercase;" class="center">Veja nossa coleção completa!</h2>
+            </a>
+            <div id="atividades" class="sectionWhitespace"></div>
+        </div>
+
+        <div class="section">
+            <div class='sectionTitle'><h1 class="titleLeft">Atividades</h1></div>
+            <div class="smallWhitespace"></div>
+            <div class="flex-container">
+                <div class="text-left">
+                    <p>Nós somos um grupo de estudos sobre desenvolvimento de jogos, onde nosso principal objetivo é aprender sobre 
+                        técnicas e práticas que abrangem todas as áreas da produção de games.</p>
+                    <p>Visamos estudar sobre programação e softwares, e também sobre artes, histórias e músicas para criar nossos próprios jogos.</p>
+                    <p>Desenvolvemos nossos projetos de jogos em equipes para exercitar o trabalho cooperativo e cada membro tem a liberdade de 
+                        contribuir em qualquer aspecto do projeto.</p>
+                    <p>Buscamos participar de maratonas de desenvolvimento de jogos e também realizar oficinas de estudos.</p>
+                </div>
+                <div class="image">
+                    <img src="Images/secot.png">
+                </div>
+            </div>
+
+            <div id="eventos" class="sectionWhitespace"></div>
+        </div>
+        
+        <div class="section">
+            <div class='sectionTitle'><h1 class="titleRight">Eventos</h1></div>
+            <div class="smallWhitespace"></div>
+            <div class="flex-container">
+                <div class="image">
+                    <img src="Images/secot.png">
+                </div>
+                <div class="text-right">
+                    <p>Nós somos um grupo de estudos sobre desenvolvimento de jogos, onde nosso principal objetivo é aprender sobre 
+                        técnicas e práticas que abrangem todas as áreas da produção de games.</p>
+                    <p>Visamos estudar sobre programação e softwares, e também sobre artes, histórias e músicas para criar nossos próprios jogos.</p>
+                    <p>Desenvolvemos nossos projetos de jogos em equipes para exercitar o trabalho cooperativo e cada membro tem a liberdade de 
+                        contribuir em qualquer aspecto do projeto.</p>
+                    <p>Buscamos participar de maratonas de desenvolvimento de jogos e também realizar oficinas de estudos.</p>
+                </div>
+            </div>
+            <div class="whitespace"></div>
+
+        </div>
+
+        <div id="footer">
+            <div class="smallWhitespace"></div>
+            <div id="footer-container" class="flex-container">
+                <div class="footer-element">
+                    <h2>Endereço</h2>
+                    <p>UFSCar Sorocaba<br/>
+                    Rod. João Leme dos Santos, km 110<br/>SP-264 Bairro do Itinga, Sorocaba<br/>SP CEP 18052-780 - Brasil</p>
+                </div> 
+
+                <div class="footer-element">
+                    <h2>Contato</h2>
+                    <div id="footer-icons" class="flex-container">
+                        <div class="image">
+                            <a href="https://github.com/Gamedev-Ufscar" target="_blank"><img src="Images/Icons/GitHub.png"></a>
+                        </div>
+                        <div class="image">
+                            <a href="https://gamedevufscar.itch.io/" target="_blank"><img src="Images/Icons/itchio.png"></a>
+                        </div>
+                        <div class="image">
+                            <a href="https://www.facebook.com/GameDevUFSCar" target="_blank"><img src="Images/Icons/Facebook.png"></a>
+                        </div>
+                        <div class="image">
+                            <a href="https://discord.gg/gnjMbYkH" target="_blank"><img src="Images/Icons/Discord.png"></a>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="smallWhitespace"></div>
+            <div class="smallWhitespace"></div>
+        </div>
+
     </body>
 
     <script src="Scripts/script.js"></script>
