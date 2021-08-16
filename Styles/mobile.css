@@ -1,4 +1,21 @@
-@media only screen and (max-width: 980px) {
+@media (max-width: 880px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  p {
+    font-size: 2em;
+  }
+
+  #logo {
+    margin-left: auto;
+    height: 100%;
+  }
+
   #links {
     display: none;
   }

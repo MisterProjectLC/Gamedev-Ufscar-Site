@@ -57,6 +57,33 @@ a img {
     margin-left: 0vw;
   }
 }
+@media (max-width: 980px) {
+  @keyframes roll {
+    0% {
+      margin-left: calc(50% - 250px);
+      transform: rotate(0deg);
+    }
+    50% {
+      margin-left: calc(50% - 60px);
+      transform: rotate(360deg);
+    }
+    100% {
+      margin-left: calc(50% - 250px);
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes stay {
+    0% {
+      margin-left: 0vw;
+    }
+    50% {
+      margin-left: calc(0vw - 190px);
+    }
+    100% {
+      margin-left: 0vw;
+    }
+  }
+}
 #header {
   /*display: inline-block;*/
   position: fixed;
@@ -87,28 +114,36 @@ a img {
 #header #logoname.animated {
   animation: stay 0.75s backwards;
 }
-@media only screen {
+#header #links {
+  height: 100%;
+  padding-right: 10%;
+  float: right;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+}
+#header #links a {
+  position: relative;
+  display: block;
+  margin-top: 25px;
+  margin-left: 2vw;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Open Sans", sans;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #2A2A2A;
+  transition: color 0.3s;
+}
+#header #links a:hover {
+  color: #FFFFFF;
+}
+@media (max-width: 980px) {
+  #header #logo {
+    margin-left: calc(50% - 250px);
+  }
   #header #links {
-    height: 100%;
-    padding-right: 10%;
-    float: right;
-    white-space: nowrap;
-  }
-  #header #links a {
-    position: relative;
-    display: inline-block;
-    margin-top: 25px;
-    margin-left: 2vw;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: "Open Sans", sans;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #2A2A2A;
-    transition: color 0.3s;
-  }
-  #header #links a:hover {
-    color: #FFFFFF;
+    display: none;
   }
 }
 
@@ -130,6 +165,14 @@ a img {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
   z-index: 1;
 }
+@media (max-width: 980px) {
+  #carouselExampleIndicators h5 {
+    font-size: 2em;
+  }
+  #carouselExampleIndicators p {
+    font-size: 1.5em;
+  }
+}
 
 /* sectionTitle ----------------------------- */
 div.sectionTitle {
@@ -139,7 +182,7 @@ div.sectionTitle h1 {
   color: white;
   text-transform: uppercase;
   font-family: Aldo;
-  font-size: 3.5vw;
+  font-size: 45px;
   margin-top: auto;
 }
 div.sectionTitle .titleLeft {
@@ -147,6 +190,14 @@ div.sectionTitle .titleLeft {
 }
 div.sectionTitle .titleRight {
   margin-left: 80%;
+}
+@media (max-width: 980px) {
+  div.sectionTitle h1 {
+    font-size: 5em;
+  }
+  div.sectionTitle .titleRight {
+    margin-left: 60%;
+  }
 }
 
 /* sections ----------------------------- */
@@ -159,10 +210,20 @@ div.sectionTitle .titleRight {
 }
 .section h2 {
   font-family: Bahnschrift;
-  font-size: 2vw;
+  font-size: 25px;
 }
 .section p {
-  font-size: 1.25vw;
+  font-size: 18px;
+}
+@media (max-width: 980px) {
+  .section h2 {
+    font-family: Bahnschrift;
+    font-size: 3em;
+  }
+  .section p {
+    font-size: 2em;
+    text-align: center;
+  }
 }
 .section .center {
   width: 75%;
@@ -171,9 +232,11 @@ div.sectionTitle .titleRight {
 }
 .section .flex-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-items: center;
+  align-content: space-around;
   padding: 0 10%;
 }
 .section .flex-container .text-left {
@@ -192,6 +255,39 @@ div.sectionTitle .titleRight {
 }
 .section .flex-container .image img {
   width: 100%;
+}
+@media (max-width: 980px) {
+  .section .flex-container .text-left {
+    width: 80%;
+    min-width: 400px;
+  }
+  .section .flex-container .image {
+    width: 80%;
+    margin-top: 50px;
+  }
+}
+.section #events-container {
+  align-content: space-around;
+}
+.section #events-container .event {
+  width: 25%;
+  min-width: 250px;
+  margin-bottom: 50px;
+}
+.section #events-container .event img {
+  display: block;
+  margin: 0 auto;
+  height: 50px;
+}
+.section #events-container .event h2, .section #events-container .event p {
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+}
+@media (max-width: 980px) {
+  .section #events-container .event {
+    min-width: 500px;
+  }
 }
 
 /* footer */
@@ -241,6 +337,24 @@ div.sectionTitle .titleRight {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+@media (max-width: 980px) {
+  #footer #footer-container {
+    width: 90%;
+    height: 300px;
+  }
+  #footer h2 {
+    font-size: 2em;
+  }
+  #footer p {
+    font-size: 1.65em;
+  }
+  #footer #footer-icons .image {
+    width: 100px;
+  }
+  #footer #footer-icons .image a {
+    width: 100px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
